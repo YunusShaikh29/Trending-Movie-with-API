@@ -136,9 +136,9 @@ const displayTrendingMovieByCoord = async function(){
     try{
 
         const coords = prompt('Enter Co-ordinates')
-        const {prov} = await customFetch(`https://geocode.xyz/${coords}?geoit=json&auth=${geoCodeApiKey}`, 'There is some issue finding movie by your coordinates');
-    
-        displayTrendingMovie(`https://api.themoviedb.org/3/discover/movie?api_key=${tmdbApiKey}&with_origin_country=${prov}`)
+        const response = await customFetch(`https://geocode.xyz/${coords}?geoit=json&auth=${geoCodeApiKey}`, 'There is some issue finding ISO code');
+        if(response.error) throw new Error (response.error.description)
+        displayTrendingMovie(`https://api.themoviedb.org/3/discover/movie?api_key=${tmdbApiKey}&with_origin_country=${response.prov}`)
     }
     catch (error){
         movieDataCont.classList.add("container_hidden");
