@@ -1,0 +1,40 @@
+@media (max-width: 450px) {
+    .app_container {
+        width: 90%;
+    }
+
+    .app_container_styling {
+        overflow: visible;
+    }
+
+    .movie_data_container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .movie_poster_container {
+        padding: 4em;
+    }
+
+    .movie_information_container_styling{
+        font-size: .8rem;
+    }
+
+    .error_container {
+        min-width: auto;
+    }
+}
+
+
+/* js related classes */
+.container_hidden {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-20rem);
+    margin-bottom: 0;
+    padding: 0;
+
+    /* For the hovering to not work: */
+    visibility: hidden;
+}

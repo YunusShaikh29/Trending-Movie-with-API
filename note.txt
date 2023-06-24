@@ -1,0 +1,41 @@
+Async await were release in ES8 ... to better consume promise
+
+Async function will keep running in the background while executing the code inside of it. Once the function is done with its execution, it returns a promise.
+
+we can use the await keyword to await the result of a promise
+
+as soon as the promise resolved, the value of the entire await expression will be resolved value of the promise ... that can be stored in a varible.
+
+
+try catch:
+
+within the try-block we can try executing the risky code. If an error occurs, the catck-block will have access to the error that occured in the try block
+
+
+~~~~~~~~~~~~~~~~~ VERY IMPORTANT ~~~~~~~~~~~~~~
+ 
+        NEVER WORK IN AN Async FUNTION, WITHOUT try catch
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+async function always returns a promise so if we try printing the returned value of an asynchronous function we will get a pending promise. 
+
+the value that we returned from an async function, will become the fulfilled value of the promise that's returned from the async function.
+
+
+
+Even if there is an error in the async function the async function returns the fulfilled promise in case we want the async function to return a rejected promise we need to manually re throw the error 
+
+
+
+Promise.all(): Is used to run the promises in parallel. 
+It takes an array of promises and return one new promise. We can await this newly returned promise to get all the resolved values at once (in an array).
+
+Even if one of the promise gets rejected, then the entire Promise.all() gets rejected. 
+It short circuit when any promise rejected
+
+
+Promise.race():
+also takes array of promise and returns one promise. But, the promise returned from Promise.race() is settled as soon as one of the input promise  gets settled.
+
+Is used to prevent against a never ending promise i.e. long running promise. 
