@@ -134,7 +134,7 @@ const trendingOnTMDB = _ => displayTrendingMovie(`${trendingUrl}${tmdbApiKey}`)
 
 const displayTrendingMovieByCoord = async function(){
     try{
-
+      errorCont.classList.add('container_hidden')
         const coords = prompt('Enter Co-ordinates')
         coordinatesBtn.blur()
         const response = await customFetch(`https://geocode.xyz/${coords}?geoit=json&auth=${geoCodeApiKey}`, 'There is some issue finding ISO code');
